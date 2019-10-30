@@ -1,0 +1,16 @@
+.success-event{
+    display: flex;
+    height: 40px;
+    width: 60%;
+    margin-top: 1%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background: rgba(136, 228, 106,.7);
+
+    border-radius: 5px;
+    img{
+        margin-right: 10px;
+    }
+    transition: all 0.5s ease-in-out;
+}

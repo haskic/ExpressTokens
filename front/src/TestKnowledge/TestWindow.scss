@@ -1,0 +1,33 @@
+.test-window{
+    flex-grow: 10;
+    flex-basis: 40%;
+    flex-shrink: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.test-window-container{
+    display: flex;
+    height: 60%;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-evenly   ;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.w100{
+    width: 100%;
+}
+.flex{
+    display: flex;
+}
+.w-center{
+    justify-content: center;
+}
+.h-center{
+    align-items: center;
+}

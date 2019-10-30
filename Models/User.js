@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
+const Word = require('./Word');
 
 const UserSchema = mongoose.Schema({
     name: String,
@@ -10,8 +9,9 @@ const UserSchema = mongoose.Schema({
     sessions: [{
         token: String,
         fingerPrint: String
-    }]
+    }],
+    words: [Word.schema]
 });
 
 
-module.exports = User = mongoose.model('user',UserSchema);
+module.exports = mongoose.model('user',UserSchema);

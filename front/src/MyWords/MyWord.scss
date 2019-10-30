@@ -1,0 +1,13 @@
+.my-words{
+    flex-grow: 1;   
+    flex-shrink: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.my-words-container{
+    margin-top: 5%;
+    width: 50%;
+    position: relative;
+}

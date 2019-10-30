@@ -1,0 +1,30 @@
+
+.col-word-list{
+    display: inline-block;
+    width: 30%;
+    height: 40px;
+    font-size: 14pt;
+    border: 1px solid black;
+    img{
+        width: 16px;
+        height: 16px;;
+    }
+    .delete-container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+#col-header{
+    font-size: 14pt;
+    background: rgba(247, 150, 70,1);
+    color: white;
+}
+.delete-button{
+    display: inline-block;
+    width: 10%;
+    border: 1px solid black;
+
+    
+   
+}

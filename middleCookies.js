@@ -2,23 +2,27 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 
-function auth(req,res,next) {
+function authCook(req,res,next) {
     const token = req.header('x-auth-token');
+    console.log("DECODED");
+
     if (!token)
+        console.log('NO TOKEN');
         return res.status(401).json({msg: "No token, authorization denied"});
 
     try{
-        console.log(token)
-        const decoded = jwt.verify(token, config.get("jwtSecretAccess"));
+        const decoded = jwt.verify(token, config.get("jwtSecret"));
+        console.log("DECODED",decoded);
         req.user = decoded;
         next();
     }
     catch (e) {
-        console.log("AHAHAHHHA")
+        console.log('TOKEN NOT VALID');
+
         res.status(400).json({msg: 'Token is not valid'});
     }
 
 }
 
 
-module.exports = auth;
+module.exports = authCook;

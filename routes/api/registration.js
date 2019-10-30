@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const User = require('./../../Models/User');
 const role = "user";
 
@@ -20,13 +19,10 @@ router.post('/', (req, res) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
             newUser.password = hash;
-            newUser.save().then(user => {
+            newUser.save().then(() => {
                 res.json({
-                    user: {
-                        id: user.id,
-                        name: user.name,
-                        email: user.email,
-                    }
+                    info: "User was registrated",
+                    isRegistrated: true
                 });
             });
 

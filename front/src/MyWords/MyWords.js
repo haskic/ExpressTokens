@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Firebase from 'firebase';
-import {config} from './../firebase.config';
+import {config} from './../config';
 import './MyWord.scss';
 import Table from '../UtilComponents/Table/Table';
 import Loader from '../Loader/Loader';
@@ -37,7 +37,7 @@ function MyWords(props) {
         let startUrl = props.store && props.store.email;
         startUrl = startUrl.match('([^@]+)');
         console.log("STORE TOKEN:",props.store.accessToken);
-        fetch('http://localhost:3001/api/word/get', {
+        fetch(`${config.url}/api/word/get`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'x-auth-token': props.store.accessToken,

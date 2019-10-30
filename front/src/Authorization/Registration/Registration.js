@@ -7,8 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 //firebase config
-import {config} from './../../firebase.config';
-
+import {config} from "../../config";
 //style
 import './Registration.scss';
 
@@ -16,7 +15,7 @@ const buttonStyle = {height: '40px', width: '60%', 'margin-top': '6%'};
 
 function Registration(props) {
     function singUp(email, password) {
-        fetch('http://localhost:3001/api/reg', {
+        fetch(`${config.url}/api/reg`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',

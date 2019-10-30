@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 //MyModule
 import SuccessEvent from './../Events/SuccessEvent';
 //fireabase config
-import {config} from './../firebase.config';
+import {config} from "../config";
 //style
 import './WordAdder.scss';
 
@@ -62,7 +62,7 @@ function WordAdder(props) {
 
         let startUrl = props.store && props.store.email;
         startUrl = startUrl.match('([^@]+)');
-        fetch('http://localhost:3001/api/word/add', {
+        fetch(`${config.url}/api/word/add`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'x-auth-token': props.store.accessToken,

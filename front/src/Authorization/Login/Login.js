@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import {config} from './../../firebase.config';
+import {config} from './../../config';
 import Loader from './../../Loader/Loader';
 import "./Login.scss";
 
@@ -26,7 +26,7 @@ function Login(props) {
     const InvalidError = <div style={errorStyle}>Invalid login or password</div>;
     let textFieldRef2 = React.createRef();
     function signIn(email, password) {
-        fetch('http://localhost:3001/api/login', {
+        fetch(`${config.url}/api/login`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',

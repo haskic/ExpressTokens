@@ -4,12 +4,11 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require('path');
-const PORT= 3001;
+const PORT= process.env.PORT ||  8080;
 mongoose.connect('mongodb+srv://alexander_speek:123321sanek@cluster0-x5rsp.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true },function (err) {
     if(err) throw err;
     console.log("Mongo connected");
 });
-
 
 mongoose.set('useFindAndModify', false);
 

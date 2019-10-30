@@ -10,6 +10,7 @@ mongoose.connect('mongodb+srv://alexander_speek:123321sanek@cluster0-x5rsp.mongo
     console.log("Mongo connected");
 });
 
+
 mongoose.set('useFindAndModify', false);
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
@@ -34,5 +35,5 @@ if (process.env.NODE_ENV === 'production'){
 
 
 app.listen(PORT,() => {
-    console.log("Server starting ...");
+    console.log("Server starting ...",PORT);
 });

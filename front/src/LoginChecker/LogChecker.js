@@ -5,8 +5,7 @@ import retoken from './../retoken/retoken';
 import Firebase from 'firebase';
 import Cookies from 'universal-cookie';
 //import firebase config
-import {config} from './../firebase.config';
-
+import {config} from './../config';
 function LogChecker(props){
     useEffect(() => {
         checkCooks();
@@ -24,7 +23,7 @@ function LogChecker(props){
     function signIn(token, fingerPrint) {
         console.log("TRY LOG");
         console.log("COOKS",token);
-        fetch('http://localhost:3001/api/login/co', {
+        fetch(`${config.url}/api/login/co`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
